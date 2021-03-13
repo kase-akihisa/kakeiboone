@@ -1,0 +1,8 @@
+<div class="mt-50">Mypage
+
+<p id="notice"><%= notice %></p>
+
+<h1>支出額</h1>
+
+<%= column_chart Spending.group(:date).sum(:cost) %>
+</div>
