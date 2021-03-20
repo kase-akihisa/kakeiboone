@@ -19,12 +19,12 @@
         <ul class="nav navbar-nav navbar-right">
           <% if logged_in? %>
             <li>
-              <%= link_to "#" do %>
+              <%= link_to pages_mypage_path do %>
                 <%= image_tag "mypage.png" %>
               <% end %>
             </li>
             <li>
-              <%= link_to "#" do %>
+              <%= link_to new_spending_path do %>
                 <%= image_tag "calculator.png" %>
               <% end %>
             </li>

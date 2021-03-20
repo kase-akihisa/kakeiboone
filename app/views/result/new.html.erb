@@ -1,0 +1,11 @@
+<div class="container">
+ <div class="mt-50">result
+    
+  <p id="notice"><%= notice %></p>
+  <div class="center-block">
+        
+  <%= column_chart Spending.group(:cost).count %, width: "900px", height: "600px"%>
+  </div>
+    
+ </div>
+</div>
