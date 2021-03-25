@@ -7,7 +7,7 @@
      <div class="center-block">
      <p>支出額(円)</p>
      
-     <%= column_chart Spending.group(:date).sum(:cost_other), width: "900px", height: "600px"%>
+     <%= column_chart Spending.group(:date).total, width: "900px", height: "600px"%>01
      </div>
   </div>
  

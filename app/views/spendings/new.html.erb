@@ -4,31 +4,31 @@
    <%= form_for @spending do |f| %>
     <div class="form-group">
      <%= f.label :"住居費" %>
-     <%= f.text_field :"cost_house", class: 'form-control' %>
+     <%= f.text_field :"cost", class: 'form-control' %>
     </div>
     <div class="form-group">
      <%= f.label :"水道光熱費" %>
-     <%= f.text_field :"cost_utility", class: 'form-control' %>
+     <%= f.text_field :"cost", class: 'form-control' %>
     </div>
     <div class="form-group">
      <%= f.label :"通信費" %>
-     <%= f.text_field :"cost_communications", class: 'form-control' %>
+     <%= f.text_field :"cost", class: 'form-control' %>
     </div>
     <div class="form-group">
      <%= f.label :"交通費" %>
-     <%= f.text_field :"cost_travel", class: 'form-control' %>
+     <%= f.text_field :"cost", class: 'form-control' %>
     </div>
     <div class="form-group">
      <%= f.label :"日用品費" %>
-     <%= f.text_field :"cost_item", class: 'form-control' %>
+     <%= f.text_field :"cost", class: 'form-control' %>
     </div>
     <div class="form-group">
      <%= f.label :"その他" %>
-     <%= f.text_field :"cost_other", class: 'form-control' %>
+     <%= f.text_field :"cost", class: 'form-control' %>
     </div>
    <div class="form-group">
     <%= f.label "登録日", class: 'control-label'%>
-    <%= f.date_select :created_at, class: 'form-control'%>
+    <%= f.date_select :date, class: 'form-control'%>
    </div>
    <% if logged_in? %>
    <%= f.submit '計算', class: 'btn btn-black btn-block' %>
