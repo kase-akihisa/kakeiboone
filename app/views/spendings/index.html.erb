@@ -2,8 +2,12 @@
  <div class="mt-50">
   <% current_user.spendings.each do |spending| %>
    <%= spending.date %>
-   <%= spending.total %> 円
+   <%= spending.cost %> 円
    <br>
+  <% end %>
+  <% if @pie_chart_value.present? %>
+  
+  <%= pie_chart @pie_chart_value, width: "900px", height: "600px"%>
   <% end %>
  </div>
 </div>

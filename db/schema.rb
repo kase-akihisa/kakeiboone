@@ -14,12 +14,7 @@ ActiveRecord::Schema.define(version: 2021_03_09_082719) do
 
   create_table "spendings", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "user_id"
-    t.decimal "cost_house", precision: 10
-    t.decimal "cost_utility", precision: 10
-    t.decimal "cost_communications", precision: 10
-    t.decimal "cost_travel", precision: 10
-    t.decimal "cost_item", precision: 10
-    t.decimal "cost_other", precision: 10
+    t.decimal "cost", precision: 10
     t.date "date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -28,6 +23,7 @@ ActiveRecord::Schema.define(version: 2021_03_09_082719) do
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
     t.string "email"
+    t.string "password"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "password_digest"

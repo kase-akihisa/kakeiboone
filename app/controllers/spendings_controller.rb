@@ -7,12 +7,14 @@ class SpendingsController < ApplicationController
         @spending=Spending.new
     end
     def create
-        @spending = current_user.spendings.new(spending_params)
+          cost = spending_params[:cost_house].to_i + spending_params[:cost_utility].to_i + spending_params[:cost_communications].to_i + spending_params[:cost_travel].to_i + spending_params[:cost_item].to_i + spending_params[:cost_other].to_i
+          @spending = current_user.spendings.new(cost: cost, date: "#{params["date(1i)"]}-#{params["date(2i)"]}-#{params["date(3i)"]}")
         if @spending.save
-            redirect_to spendings_path, success: '成功しました'
+            @pie_chart_value = [["家賃", spending_params[:cost_host]], ["水道・光熱費", spending_params[:cost_utility]], ["通信費", spending_params[:cost_communications]], ["交通費", spending_params[:cost_travel]], ["日用品費", spending_params[:cost_item]], ["その他", spending_params[:cost_other]]]
+            render :index and return
         else
             flash.now[:danger] = '失敗しました'
-            render :new
+            render :new and return
         end
     end
     

@@ -7,7 +7,7 @@
      <div class="center-block">
      <p>支出額(円)</p>
      
-     <%= column_chart Spending.group(:date).total, width: "900px", height: "600px"%>01
+     <%= column_chart current_user.spendings.pluck(:date, :cost), width: "900px", height: "600px"%>
      </div>
   </div>
  
